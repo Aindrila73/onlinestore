@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Cart Section */
+/* Cart Section */
+.cart-section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-section p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-section button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cart-section button:hover {
+    background-color: #c82333;
+}
+
+/* Cart Items */
+.cartitem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cartitem img {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 10px;
+}
+.quantity { 
+     display: flex;
+     justify-content: center; 
+     align-items: center; 
+     margin-top: 10px;
+     }
+.quantity button{
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 0 5px;
+    cursor: pointer;
+} 
+.quantity span{
+    font-size: 1rem;
+    margin: 0 10px;
+}
+ .cartitem p, .cartitem h3, .cartitem button, .cartitem span {
+    margin: 0 10px;
+    flex: 1;
+}
+
+.cartitem button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cartitem button:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .cart-section {
+        width: 90%;
+    }
+
+    .cartitem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cartitem img {
+        margin-bottom: 10px;
+    }
+    .cartitem button{
+        width: 80px;
+    }
+    .quantity{      
+        border-radius: 50px;    
+        margin-bottom: 10px;        
+    }
+   .cartitem h3{
+    font-size: 1rem;
+   }
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="project.html" class="logo">
+        Online Store
+        </a>
+        <div class="nav-links-a" id="navlinks">
+            <i class="fa fa-close" aria-hidden="true" onclick="hideMenu()"></i>
+            <ul><li><a href="project.html">Home</li></a>
+            <li><a href="product.html">Shop</li></a>
+            <li><a href="about.html">About</li></a>
+            <li><a href="contact.html">Contact us</li></a>
+            <a href="cart.html" id="cart"><i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </ul>
+        </div>
+        <i class="fa fa-menu" aria-hidden="true" onclick="showMenu()">
+            <div class="a"></div>
+
+            <div class="a"></div>
+            <div class="a"></div>           
+        </i>
+    </nav>
+
+    <section class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: $<span id="total-price">0</span></p>
+        <button onclick="checkOut()">Check Out</button>
+    </section> 
+    <!-- footer -->
+    <footer>
+           <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a href="">Careers</a>
+                <a href="">Blog</a>
+                <a href="">About Online Store</a>
+                <a href="">Investor Relations</a>
+                <a href="">Different Devices</a>
+                <a href="">Science</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a href="">Sell products on Online Store</a>
+                <a href="">Sell on Online Bussiness</a>
+                <a href="">Sell app on Online</a>
+                <a href="">Become an Afflicate</a>
+                <a href="">Advertise your Products</a>
+                <a href="">Self-Publish with us</a>
+                <a href="">Host an Online Store</a>
+                <a href="">*See More Make Money With Us</a>
+            </ul>
+            <ul>
+                <p>Online Store Payment Products</p>
+                <a href="">Online Bussiness Card</a>
+                <a href="">Shop with Points</a>
+                <a href="">Reload your Balance</a>
+                <a href="">Online Store Currency Convertor</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a href="">Online Store & Covid19</a>
+                <a href="">Your Account</a>
+                <a href="">Shipping Rates & Policies</a>
+                <a href="">Returns & Replacement</a>
+                <a href="">Manage your Content And Devices</a>
+                <a href="">Help</a>
+            </ul>
+           
+        </div>
+        <div class="foot-panel4">
+            <ul class="foot-ul">
+                <a href=""><p class="foot-p">Amazon Music</p>
+                    Stream millions
+                    of songs</a>
+                <a href=""> 
+                    <p class="foot-p">Amazon Business</p>
+                    Everything For
+                    Your Business</a>
+                <a href=""> 
+                    <p class="foot-p">IMDb</p>
+                    Movies, TV
+                    & Celebrities</a>
+                <a href=""> <p class="foot-p"> Ring</p>
+                   Smart Home
+                    Security Systems</a>
+            </ul>
+            <ul class="foot-ul">
+                <a href=""><p class="foot-p">Online Store Ads</p>Reach customers
+                    wherever they
+                    spend their time</a>
+                <a href=""><p class="foot-p">Online Store Global</p>Ship Orders
+                    Internationally</a>
+                <a href=""><p class="foot-p">IMDbPro</p>Get Info Entertainment
+                    Professionals Need</a>
+                <a href=""><p class="foot-p">eero WiFi</p>Stream 4K Video
+                    in Every Room</a>
+            </ul>
+            <ul> 
+                <a href=""><p class="foot-p">6pm</p>Score deals
+                    on fashion brands</a>
+                <a href=""><p class="foot-p">Home Services</p>Experienced Pros
+                    Happiness Guarantee</a>
+                <a href=""><p class="foot-p">Kindle Direct Publicing</p>Indie Digital & Print Publishing
+                    Made Easy </a>
+                <a href=""><p class="foot-p">Blink</p>Smart Security
+                    for Every Home</a>
+            </ul>
+            <ul> 
+                <a href=""><p class="foot-p">AbeBooks</p>Books, art
+                    & collectibles</a>
+                <a href=""><p class="foot-p">Online Store Web Services</p>Scalable Cloud
+                    Computing Services</a>
+                <a href=""><p class="foot-p">Prime Video</p>Video Distribution
+                    Made Easy</a>
+                <a href=""><p class="foot-p">Neighbours App</p>Real-Time Crime
+                    & Safety Alerts</a>
+            </ul>
+            <ul> 
+                <a href=""><p class="foot-p">ACX</p>Audiobook Publishing
+                    Made Easy</a>
+                <a href=""><p class="foot-p">Audible</p>Listen to Books & Original
+                    Audio Performances</a>
+                <a href=""><p class="foot-p">Shopbop</p>Designer
+                    Fashion Brands</a>
+                <a href=""><p class="foot-p">Online Store Subscription Boxes</p>Top subscription boxes-right to your door</a>
+            </ul>
+            <ul> 
+                <a href=""><p class="foot-p">Sell in Amazon</p>Start a Selling Account</a>
+                <a href=""><p class="foot-p">Box Office Mojo</p>Find Movie
+                    Box Office Data</a>
+                <a href=""><p class="foot-p">Woot!</p>Deals and
+                    Shenanigans</a>
+                <a href=""><p class="foot-p">PillPack</p>Pharmacy Simplified</a>
+            </ul>
+            <ul> 
+                <a href=""><p class="foot-p">Veeqo</p>Shipping Software
+                    Inventory Management</a>
+                <a href=""><p class="foot-p">Goodreads</p>Book reviews
+                    & recommendations</a>
+                <a href=""><p class="foot-p">Zappos</p>Shoes &
+                    Clothing</a>
+            </ul>
+        </div>
+        <div class="foot-panel5">
+            <div class="pages">
+                <a href="">Condition of Use</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Your Ads Privacy Choices</a>
+            </div>
+            <div class="copyright">
+                &copy;1997-2024,OnlineStore.com Inc.or its afflicates
+            </div>
+        </div>
+    </footer>
+     <script src="script.js"></script>
+<script>
+    // Function to handle the checkout process
+    function checkOut() {
+    // Retrieve the cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if the cart is empty
+    if (cart.length === 0) {
+        alert("Please select some products before clicking checkout.");
+        window.location.href = 'product.html'; // Redirect to home page if cart is empty
+    } else {
+        // Clear the cart
+        localStorage.removeItem('cart');
+        
+        // Redirect to the confirmation page
+        window.location.href = 'cheackout.html';
+    }
+}
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #eee;
+    padding-left: 2%;
+    padding-right: 2%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color:#e3e6F3;
+    z-index: 1000; 
+    /* Ensure it stays above other elemnts */
+  
+}
+.navbar .logo{
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 700;
+    color: blueviolet;
+}
+.nav-links-a{
+    flex: 1;text-align: right;
+}
+.nav-links-a ul li{
+list-style: none;                                   
+display: inline-block;
+padding: 8px 12px;
+position: relative;
+}
+.nav-links-a ul li a{
+    text-decoration: none;
+    color: #000000de;
+    font-size: 1rem;
+}
+.nav-links-a ul li ::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: blueviolet;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links-a ul li:hover ::after{
+    width: 100%;
+}
+.fa{
+    display: none;
+}
+.a{
+    height: 3px;
+    width: 25px;
+    background-color: blueviolet;
+    margin-top: 4px;
+}
+#cart{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+@media screen and (max-width:900px) {
+    .navbar{
+        height: 4rem;
+    }
+}
+@media screen and (max-width:600px) {
+    .navbar{
+        height: 4rem;
+    }
+    .nav-links-a ul li{
+        display: block;
+    }
+    .nav-links-a ul li a{
+        color: #eee;
+    }
+    .nav-links-a{
+        position: fixed;
+        background: blueviolet;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    .navbar .fa{
+        display: block;
+        color: #eee;
+        margin: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .fa-close{
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .nav-links-a ul{
+        padding: 20px;
+    }
+}
+                /* home page */
+    #hero{
+        background-image: url("https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/hero4.png?raw=true");
+        height: 90vh;
+        width: 100%;
+        
+        background-size: cover;
+        background-position: top 25% right 0;
+        padding: 0 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        font-family: "Roboto",sans-serif;
+         }            
+#hero h4{
+    padding-bottom: 15px;    
+    font-weight: bold;   
+}
+#hero h1{
+    color: #088178;
+    font-size: 2.3rem;
+}
+#hero button{
+    background-image: url("https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/button.png?raw=true");
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width:600px) {
+    #hero{
+        height: 70vh;
+        padding: 0 80px;
+        background-position: top 30% right 50%;
+        }
+    #hero h1,h4,h2,p{
+        top: 30%;
+        left: 50%;
+        font-size: 1.7rem;
+    } 
+    #hero h4{
+        font-size: 1rem;
+    } 
+    #hero p{
+        font-size: 1rem; 
+    }}
+   
+                /* category */
+.main h2{
+    padding: 10px;
+}
+.main{
+    width: auto;
+    margin: auto;
+    display: flex;
+    justify-content:space-between ;
+    background-color: #e3e6F3;
+}
+.filterbox{
+     flex-basis: 23%;
+}
+.searchList{
+    width: 100%;
+    max-width: 500px;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+    flex-grow: 1;
+    padding-right: 10px;
+}
+.glass:hover{
+    color: orangered;
+    cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+    .searchList {
+        width: 80%; 
+        max-width: none;
+    }
+}
+
+.product{
+    padding: 10px 8px 0px 8px;
+    flex-basis: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:start;
+    gap: 10px;
+}
+.categoryList label{
+    display: block;
+    padding: 10px 0px;
+}
+.productitem{
+    padding: 2px 8px 0px 8px;
+    flex-basis: 31%;
+    box-shadow: 0px 0px 10px 2px #ccc;
+    margin-bottom: 10px;
+    background-color: white;
+}
+.productitem img{
+    width: 100%;
+    height: 250px;
+}
+.productitem p.price{
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.productitem p .title{
+    font-size: 1rem;
+    color: black;
+    font-weight: 700;
+    font-family: "Poppins",sans-serif;
+}
+.productitem h5{
+    padding: 8px;
+}
+.productitem h6{
+    padding: 10px;
+    border-bottom: 0.5px solid #ccc;
+}
+.productitem span{
+    color:#161516;
+    
+}
+
+.productitem .btn{
+    width: 100%;        
+    padding: 8px 4px; 
+    font-size: 1rem;
+    color: white;
+    background-color:orangered;
+    margin-top: 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.5s;
+    }
+.productitem .btn:hover{
+    background:#922d08;   
+}
+footer{
+    margin-top: 1rem;
+}
+.foot-panel2{
+    background-color: #222f3d;
+    color: white;
+    height: 450px;
+    display: flex;
+    justify-content: space-evenly;
+}
+footer ul{
+    margin-top: 20px;
+}
+footer ul a{
+    display: block;
+    font-size: 0.85rem;
+    color: #dddddd;
+    margin-top: 10px;
+    text-decoration: none;
+}
+footer ul a:hover{
+    text-decoration: underline;
+}   
+.foot-panel4{
+    background-color: #131A22;
+    color: white;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.foot-p{
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+.foot-ul{   
+    padding-bottom: 35px;
+    margin-top: 20px;
+}
+.foot-panel5{
+    background-color: #131A22;
+    color: white;
+    height: 100px;
+    text-align: center;   
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.pages{
+    font-size: 0.85rem;   
+    padding-top:25px;   
+}
+.pages a{
+text-decoration: none;
+color: white;
+padding-right: 4px;
+}
+.pages a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.copyright{
+    font-size: 0.85rem;
+    padding-top: 5px;
+}

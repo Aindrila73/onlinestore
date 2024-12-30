@@ -1,0 +1,1 @@
+serch,title.. add,cart number, containerdiv image and price and others section and min-height in title

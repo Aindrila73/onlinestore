@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #searchBar {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .product {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Product Search</h1>
+  <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Search for products...">
+  <div id="productList">
+    <div class="product">Product 1</div>
+    <div class="product">Product 2</div>
+    <div class="product">Product 3</div>
+    <div class="product">Product 4</div>
+  </div>
+
+  <script>
+    function searchProducts() {
+      let input = document.getElementById('searchBar').value.toUpperCase();
+      let productList = document.getElementById('productList');
+      let products = productList.getElementsByClassName('product');
+
+      for (let i = 0; i < products.length; i++) {
+        let product = products[i];
+        if (product.innerHTML.toUpperCase().indexOf(input) > -1) {
+          product.style.display = '';
+        } else {
+          product.style.display = 'no product found';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
